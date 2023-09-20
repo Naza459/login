@@ -1,46 +1,32 @@
 <div class="card-container" style="display: grid;">
-    <div class="row justify-content-center" style="margin-top: 32px;">
-      <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
-        <div class="card">
-          <div class="card-body p-4" style="margin-block: 4rem;">
-            <h1 class="text-center mb-4">
-              <i class="fas fa-user" style="font-size: 1.5em; margin-right: 10px;"></i>
-              Iniciar Sesión
-            </h1>
-            <form class="custom-form" method="post" (submit)="login()">
-              <div class="mb-3 custom-input">
-                <input
-                  type="email"
-                  [(ngModel)]="email"
-                  class="custom-input-field"
-                  id="email"
-                  name="email"
-                  placeholder="Usuario"
-                  required
-                />
-                <i class="fas fa-envelope custom-input-icon"></i>
-              </div>
-              <div class="mb-3 custom-input">
-                <input
-                  type="password"
-                  [(ngModel)]="password"
-                  class="custom-input-field"
-                  id="password"
-                  name="password"
-                  placeholder="Contraseña" 
-                  required
-                />
-                <i class="fas fa-lock custom-input-icon"></i>
-              </div>
-              <div class="text-center" style="margin-top: 10px;">
-                <a href="/Password" style="color: #777;">¿Olvidaste tu contraseña?</a>
-              </div>
-              <div class="mb-4 text-center" style="margin-top: 20px;">
-                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Ingresar</button>
-              </div>
-            </form>
-          </div>
+  <div class="row justify-content-center" style="margin-top: 32px;">
+    <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
+      <div class="card">
+        <div class="card-body p-4" style="margin-block: 4rem;">
+          <h1 class="text-center mb-4">
+            <i class="fas fa-user" style="font-size: 1.5em; margin-right: 10px;"></i>
+            Iniciar Sesión
+          </h1>
+          <form class="custom-form" (ngSubmit)="login()">
+            <div class="mb-3 custom-input">
+              <input type="email" [(ngModel)]="username" class="custom-input-field" id="email" name="email"
+                placeholder="Usuario" required />
+              <i class="fas fa-envelope custom-input-icon"></i>
+            </div>
+            <div class="mb-3 custom-input">
+              <input type="password" [(ngModel)]="password" class="custom-input-field" id="password" name="password"
+                placeholder="Contraseña" required />
+              <i class="fas fa-lock custom-input-icon"></i>
+            </div>
+            <div class="text-center" style="margin-top: 10px;">
+              <a href="/Password" style="color: #777;">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="mb-4 text-center" style="margin-top: 20px;">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Ingresar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
