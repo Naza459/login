@@ -19,13 +19,16 @@
               <i class="fas fa-lock custom-input-icon"></i>
             </div>
             <div class="text-center" style="margin-top: 10px;">
-              <a href="#" style="color: #777;" (click)="forgotPassword()">¿Olvidaste tu contraseña?</a>
+              <a href="/Password" style="color: #777;" (click)="forgotPassword()">¿Olvidaste tu contraseña?</a>
             </div>
             <div class="mb-4 text-center" style="margin-top: 20px;">
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Ingresar</button>
             </div>
           </form>
           <div class="text-center text-danger">{{ errorMessage }}</div> <!-- Mostrar el mensaje de error aquí -->
+          <div class="text-center" style="margin-top: 20px;">
+            <a href="/Usuario" style="color: #777;">Crear Usuario</a>
+          </div>
         </div>
       </div>
     </div>
