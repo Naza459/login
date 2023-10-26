@@ -1,0 +1,31 @@
+<div id="div1" style="margin: 0px; padding: 0px;bottom:0px;position:absolute;width:100%;top:0px;">
+	<sidebar></sidebar>
+	<main >
+		<loading-service></loading-service>  
+		<msg-component [mensaje]="mensaje"></msg-component> 
+		<div class="rounded">
+			<div class="row" style="margin-top:30px;justify-content: center;">
+				<div class="col-sm-8 col-md-6 col-lg-4 account-wall">
+					<div style="text-align:center;margin-bottom:15px;">
+						<img class="ec-menu-brand__img" src="./assets/images/Free_Sample_By_Wix (1).jpg" width="145rem;" height="135px" style="margin-top: -15px;" style="border-radius: 48%;">
+					</div>
+					<div style="text-align:center;">
+						<h2 class="font-light texto-movistar">Soto Motors 2013 C.A</h2>
+						<form class="form-signin" style="padding:20px;"  method="post">
+							<input type="text" style="margin-bottom:15px;text-transform:lowercase;" class="form-control input-movistar" placeholder="Usuario" required autofocus [(ngModel)]="email" name="email" id="email" (keypress)="validarEmail($event,email)" maxlength="80"  autocomplete="off">
+							<div class="input-group mb-3" style="margin-bottom:15px;">
+								<input  type="password" class="form-control input-movistar" placeholder="Contraseña" aria-label="Contraseña" required [(ngModel)]="password" name="password" id="password" autocomplete="off" maxlength="20" (keyup)="keyupsearch($event)">
+								<span class="input-group-text" style="cursor:pointer;" (mouseover)="changeTypeInputShow('password')" (mouseout)="changeTypeInputHide('password')"><img src="assets/images/visibility_black.svg" height="20px"/></span>
+							</div>
+							<button class="btn btn-lg btn-block buttom-movistar-primary" style="width:100%" type="submit" (click)="authPasswordGrant()">Ingresar</button>
+							<button class="btn btn-lg btn-block buttom-movistar-secondary" style="width:100%" type="button" routerLink="/register-with-email">Nuevo cliente</button>
+						</form>
+						<p style="font-size:16px;text-align:center;">
+							<a class="font-bold" style="color:#0B2739;cursor:pointer;" routerLink="/request">Recuperar contraseña</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
