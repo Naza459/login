@@ -46,36 +46,36 @@ export class LoginComponentComponent {
     }
   }
 
-  login() {
-    console.log(this.username);
-    console.log(this.password);
+    login() {
+      console.log(this.username);
+      console.log(this.password);
 
-    // Realizar la solicitud HTTP POST al servicio de login
-    this.http.post<LoginResponse>('http://localhost:8000/companies/login/', {
-      username: this.username,
-      password: this.password
-    }).subscribe(response => {
-      console.log('Login response', response);
-      if (response.status === 200) {
-        console.log('Login successful');
-        
-        // Realizar redireccionamiento al componente "Gerente"
-        this.router.navigate(['/Gerente']);
-      } else {
-        console.log('Login error');
-        if (response.status === 400) {
+      // Realizar la solicitud HTTP POST al servicio de login
+      this.http.post<LoginResponse>('http://localhost:8000/companies/login/', {
+        username: this.username,
+        password: this.password
+      }).subscribe(response => {
+        console.log('Login response', response);
+        if (response.status === 200) {
+          console.log('Login successful');
+          
+          // Realizar redireccionamiento al componente "Gerente"
+          this.router.navigate(['/Gerente']);
+        } else {
+          console.log('Login error');
+          if (response.status === 400) {
+            this.errorMessage = 'El usuario no existe'; // Mensaje de error específico para el caso de usuario no encontrado
+          } else {
+            this.errorMessage = 'Credenciales inválidas'; // Mensaje de error genérico para otros errores
+          }
+        }
+      }, (error: HttpErrorResponse) => {
+        console.error('Login error', error);
+        if (error.status === 400) {
           this.errorMessage = 'El usuario no existe'; // Mensaje de error específico para el caso de usuario no encontrado
         } else {
           this.errorMessage = 'Credenciales inválidas'; // Mensaje de error genérico para otros errores
         }
-      }
-    }, (error: HttpErrorResponse) => {
-      console.error('Login error', error);
-      if (error.status === 400) {
-        this.errorMessage = 'El usuario no existe'; // Mensaje de error específico para el caso de usuario no encontrado
-      } else {
-        this.errorMessage = 'Credenciales inválidas'; // Mensaje de error genérico para otros errores
-      }
-    });
+      });
+    }
   }
-}
